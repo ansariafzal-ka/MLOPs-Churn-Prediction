@@ -3,6 +3,10 @@ numpy
 matplotlib
 seaborn
 scikit-learn
+imblearn
+xgboost
+lightgbm
+catboost
 optuna
 mlflow
 dvc[s3]
