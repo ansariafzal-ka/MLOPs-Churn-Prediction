@@ -1,0 +1,17 @@
+'Logistic Regresison': {
+    'solver': 'sag', 
+    'C': 0.30488401774858853, 
+    'max_iter': 1311, 
+    'tol': 0.07272504817997558, 
+    'class_weight': None, 
+    'fit_intercept': True, 
+    'intercept_scaling': 0.2339737361256624
+}
+
+'Support Vector Classifier':{
+    'kernel': 'sigmoid', 
+    'C': 99.02844274244312, 
+    'gamma': 'scale', 
+    'class_weight': 'balanced', 
+    'coef0': 5.929050096703457
+}
