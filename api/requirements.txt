@@ -9,6 +9,7 @@ lightgbm
 catboost
 optuna
 mlflow
+dvc
 dvc[s3]
 dotenv
 awscli
