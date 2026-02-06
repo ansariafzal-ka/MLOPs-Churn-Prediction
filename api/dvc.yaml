@@ -12,3 +12,10 @@ stages:
       - src/components/data_preprocessing.py
     outs:
       - artifacts/processed
+  model_trainer:
+    cmd: python src/components/model_trainer.py
+    deps:
+      - artifacts/processed
+      - src/components/model_trainer.py
+    outs:
+      - artifacts/models

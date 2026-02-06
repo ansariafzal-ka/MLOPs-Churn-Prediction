@@ -23,11 +23,29 @@ stages:
       nfiles: 3
     - path: src/components/data_preprocessing.py
       hash: md5
-      md5: 6983d169d4e69c711cba7b5e4af515e1
-      size: 6265
+      md5: 0ee790dbd87b12af8423d0528dda01ae
+      size: 6247
     outs:
     - path: artifacts/processed
       hash: md5
       md5: 6d224906780782add0225fcaa6551d58.dir
       size: 1592068
       nfiles: 2
+  model_trainer:
+    cmd: python src/components/model_trainer.py
+    deps:
+    - path: artifacts/processed
+      hash: md5
+      md5: 6d224906780782add0225fcaa6551d58.dir
+      size: 1592068
+      nfiles: 2
+    - path: src/components/model_trainer.py
+      hash: md5
+      md5: 83f728256206a4a0ea87ec285ee75374
+      size: 2775
+    outs:
+    - path: artifacts/models
+      hash: md5
+      md5: 84a3f735866089fc0fbda25c5a4ac922.dir
+      size: 2730
+      nfiles: 1

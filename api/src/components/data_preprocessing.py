@@ -150,7 +150,6 @@ class DataProcessing:
 
             logging.info('Datasets and Processor saved successfully.')
 
-            pass
         except Exception as e:
             raise CustomException(e, sys)
 
