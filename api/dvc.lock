@@ -23,8 +23,8 @@ stages:
       nfiles: 3
     - path: src/components/data_preprocessing.py
       hash: md5
-      md5: 0ee790dbd87b12af8423d0528dda01ae
-      size: 6247
+      md5: a9579c2de44fae477dedd4d595e3790f
+      size: 6337
     outs:
     - path: artifacts/processed
       hash: md5
@@ -41,11 +41,23 @@ stages:
       nfiles: 2
     - path: src/components/model_trainer.py
       hash: md5
-      md5: 83f728256206a4a0ea87ec285ee75374
-      size: 2775
+      md5: f82c9d79272c98b8049d68df47f4d92f
+      size: 3421
     outs:
     - path: artifacts/models
       hash: md5
-      md5: 84a3f735866089fc0fbda25c5a4ac922.dir
+      md5: adb7d85cef29af973c6a865d8f67739a.dir
       size: 2730
       nfiles: 1
+  model_evaluation:
+    cmd: python src/components/model_evaluation.py
+    deps:
+    - path: artifacts/processed
+      hash: md5
+      md5: 6d224906780782add0225fcaa6551d58.dir
+      size: 1592068
+      nfiles: 2
+    - path: src/components/model_evaluation.py
+      hash: md5
+      md5: f75ae7acc6623becc6ed003b0a408893
+      size: 3476

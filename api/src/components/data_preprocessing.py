@@ -28,15 +28,15 @@ class DataProcessing:
     def __init__(self) -> None:
         self.processor_config = DataProcessingConfig()
 
-    def load_data(self) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    def load_data(self, train_path, test_path) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """
         This function loads the raw training and testing datasets
         """
         try:
             logging.info('Data Processing Started.')
             logging.info('Loading the raw datasets.')
-            train_df = pd.read_csv('artifacts/raw/train.csv')
-            test_df = pd.read_csv('artifacts/raw/test.csv')
+            train_df = pd.read_csv(train_path)
+            test_df = pd.read_csv(test_path)
 
             logging.info('Raw datasets loaded successfully.')
 
@@ -48,12 +48,11 @@ class DataProcessing:
             raise CustomException(e, sys)
         
 
-    def process_data(self)  -> Tuple[pd.DataFrame, pd.DataFrame, ColumnTransformer]:
+    def process_data(self, train_df, test_df)  -> Tuple[pd.DataFrame, pd.DataFrame, ColumnTransformer]:
         """
         This function processes the raw training and testing datasets.
         """
         try:
-            train_df, test_df = self.load_data()
 
             logging.info('Processing the data...')
             # converting the TotalCharges feature into numeric
@@ -130,12 +129,11 @@ class DataProcessing:
         except Exception as e:
             raise CustomException(e, sys)
 
-    def save_data(self):
+    def save_data(self, train_processed, test_processed, preprocessor) -> None:
         """
         This function saves the processed training and testing datasets, and the preprocessor object.
         """
         try:
-            train_processed, test_processed, preprocessor = self.process_data()
 
             # create the artifacts/processed directory    
             os.makedirs(os.path.dirname(self.processor_config.train_processed_data_path), exist_ok=True)
@@ -153,12 +151,13 @@ class DataProcessing:
         except Exception as e:
             raise CustomException(e, sys)
 
-    def initialise(self):
-        """
-            This function will run the entire data preprocessing script.
-        """
-        self.save_data()
-
 if __name__ == '__main__':
+
+    train_path = 'artifacts/raw/train.csv'
+    test_path = 'artifacts/raw/test.csv'
+
     data_processor = DataProcessing()
-    data_processor.initialise()
+
+    train_df, test_df = data_processor.load_data(train_path, test_path)
+    train_processed, test_processed, preprocessor = data_processor.process_data(train_df, test_df)
+    data_processor.save_data(train_processed, test_processed, preprocessor)

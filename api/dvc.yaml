@@ -19,3 +19,8 @@ stages:
       - src/components/model_trainer.py
     outs:
       - artifacts/models
+  model_evaluation:
+    cmd: python src/components/model_evaluation.py
+    deps:
+      - artifacts/processed
+      - src/components/model_evaluation.py
