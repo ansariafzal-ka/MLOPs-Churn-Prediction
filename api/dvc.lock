@@ -59,5 +59,5 @@ stages:
       nfiles: 2
     - path: src/components/model_evaluation.py
       hash: md5
-      md5: f75ae7acc6623becc6ed003b0a408893
-      size: 3476
+      md5: cbff0d329df8504c6edb2e55e99a0c13
+      size: 3388

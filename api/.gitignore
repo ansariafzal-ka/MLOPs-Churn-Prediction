@@ -2,8 +2,10 @@
 \Customer_Churn_Prediction.egg-info
 
 \logs
-
+\mlruns
 \artifacts
+
+WA_Fn-UseC_-Telco-Customer-Churn.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
