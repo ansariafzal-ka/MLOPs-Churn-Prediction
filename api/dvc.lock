@@ -41,8 +41,8 @@ stages:
       nfiles: 2
     - path: src/components/model_trainer.py
       hash: md5
-      md5: f82c9d79272c98b8049d68df47f4d92f
-      size: 3421
+      md5: d3e160dc21cba89e6b0f4051bd304807
+      size: 3334
     outs:
     - path: artifacts/models
       hash: md5
