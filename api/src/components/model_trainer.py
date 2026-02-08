@@ -47,7 +47,6 @@ class ModelTrainer:
 
             smote = SMOTE(random_state=42)
             X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
-            print(f'Shape: ({X_train_resampled.shape}), ({y_train_resampled.shape})')
 
             mlflow.set_experiment('Churn Prediction')
 

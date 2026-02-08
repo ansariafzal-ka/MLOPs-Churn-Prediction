@@ -72,6 +72,23 @@ class DataProcessing:
             train_df['Churn'] = train_df['Churn'].map({'Yes': 1, 'No': 0})
             test_df['Churn'] = test_df['Churn'].map({'Yes': 1, 'No': 0})
 
+            # replacing the No internet service and No phone service with No    
+            for feature in categorical_features:
+                if 'No internet service' in train_df[feature].unique():
+                    train_df[feature] = train_df[feature].replace({
+                        'No internet service': 'No'
+                    })
+                    test_df[feature] = test_df[feature].replace({
+                        'No internet service': 'No'
+                    })
+                elif 'No phone service' in train_df[feature].unique():
+                    train_df[feature] = train_df[feature].replace({
+                        'No phone service': 'No'
+                    })
+                    test_df[feature] = test_df[feature].replace({
+                        'No phone service': 'No'
+                    })
+
             # skewed transformation pipeline
             log_pipeline = Pipeline([
                 ('imputer', SimpleImputer(strategy='constant', fill_value=0.0)),
