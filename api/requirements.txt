@@ -1,13 +1,16 @@
+
+# Not required for docker container
+# matplotlib
+# seaborn
+# xgboost
+# catboost
+# optuna
+# lightgbm
+
 pandas
 numpy
-matplotlib
-seaborn
 scikit-learn
 imblearn
-xgboost
-lightgbm
-catboost
-optuna
 mlflow
 dvc
 dotenv
