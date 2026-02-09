@@ -38,11 +38,11 @@ const App = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8000/predict", {
+      const response = await axios.post("http://13.204.154.162:8000/predict", {
         gender: formData.gender,
         SeniorCitizen: formData.seniorCitizen,
         Partner: formData.partner,

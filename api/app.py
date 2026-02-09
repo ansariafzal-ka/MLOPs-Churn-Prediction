@@ -38,13 +38,6 @@ class CustomerData(BaseModel):
     MonthlyCharges: float
     TotalCharges: float
 
-@app.get('/health')
-def health_check():
-    return JSONResponse(
-        content={'status': 'healthy', 'service': 'churn-api'},
-        status_code=200
-    )
-
 @app.post('/predict')
 def predict(customer: CustomerData):
     try:
