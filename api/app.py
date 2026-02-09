@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pickle
@@ -39,7 +40,10 @@ class CustomerData(BaseModel):
 
 @app.get('/health')
 def health_check():
-    return {'status': 200}
+    return JSONResponse(
+        content={'status': 'healthy', 'service': 'churn-api'},
+        status_code=200
+    )
 
 @app.post('/predict')
 def predict(customer: CustomerData):
