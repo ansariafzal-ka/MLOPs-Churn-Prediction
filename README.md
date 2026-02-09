@@ -15,6 +15,7 @@ Finally, both containers are deployed on AWS infrastructure using Elastic Contai
 ## 🏗️ Architecture
 
 ![Architecture Diagram](churn-preditor-diagram.png)
+![Frontend Image](frontend.png)
 
 ## 🛠️ Tech Stack
 
@@ -48,3 +49,4 @@ After hyperparameter tuning with Optuna, **Logistic Regression** performed best:
 - Python 3.8+
 - Node.js 16+
 - Docker
+- MongoDB
