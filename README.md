@@ -4,7 +4,7 @@
 
 An end-to-end machine learning system designed to predict customer churn using the [Telco Customer Churn Dataset](https://www.kaggle.com/datasets/rashadrmammadov/customer-churn-dataset/data) from Kaggle. The project follows a complete MLOPs pipeline from exploratory data analysis to production deployment.
 
-The system begins with comprehensive notebook-based experiments for EDA, data preprocessing, model training, and evaluation. These experiments are then converted into modular Python scripts implementing a robust data pipeline: data ingestion from MongoDB, preprocessing, model training with hyperparameter tuning using Optuna, and evaluation with MLflow for experiment tracking.
+The project begins with comprehensive notebook-based experiments for EDA, data preprocessing, model training with hyperparameter tuning using Optuna, and model evaluation. These experiments are then converted into modular Python scripts implementing a robust data pipeline: data ingestion from MongoDB, preprocessing, model training, and evaluation with MLflow for experiment tracking.
 
 The trained Logistic Regression model is served through a FastAPI backend with a `/predict` endpoint, providing real-time churn predictions. The entire API is containerised with Docker for consistent deployment.
 
